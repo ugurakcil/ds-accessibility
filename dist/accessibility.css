@@ -2,13 +2,13 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 .ds-accessibility {
-  position: fixed;
   direction: rtl;
   z-index: 10;
-  right: 30px;
-  bottom: 30px;
   min-width: 300px;
   user-select: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
   /*
   &.ds-accessibility-collapsed {
 
@@ -25,6 +25,49 @@
     }
   }
   */ }
+  .ds-accessibility .ds-accessibility-icon {
+    display: inline-block; }
+    .ds-accessibility .ds-accessibility-icon--expand {
+      background: url("images/expand.svg") no-repeat;
+      width: 40px;
+      height: 50px;
+      margin-top: 5px; }
+    .ds-accessibility .ds-accessibility-icon--close {
+      background: url("images/close.svg") no-repeat;
+      width: 50px;
+      height: 50px; }
+    .ds-accessibility .ds-accessibility-icon--zoom-out {
+      background: url("images/zoom-out.svg") no-repeat;
+      width: 150px;
+      height: 105px; }
+    .ds-accessibility .ds-accessibility-icon--zoom-in {
+      background: url("images/zoom-in.svg") no-repeat;
+      width: 150px;
+      height: 105px; }
+    .ds-accessibility .ds-accessibility-icon--invert {
+      background: url("images/invert.svg") no-repeat;
+      width: 150px;
+      height: 105px; }
+    .ds-accessibility .ds-accessibility-icon--cursor {
+      background: url("images/cursor.svg") no-repeat;
+      width: 150px;
+      height: 105px; }
+    .ds-accessibility .ds-accessibility-icon--brightness {
+      background: url("images/brightness.svg") no-repeat;
+      width: 150px;
+      height: 105px; }
+    .ds-accessibility .ds-accessibility-icon--contrast {
+      background: url("images/contrast.svg") no-repeat;
+      width: 150px;
+      height: 105px; }
+    .ds-accessibility .ds-accessibility-icon--monochrome {
+      background: url("images/monochrome.svg") no-repeat;
+      width: 150px;
+      height: 105px; }
+    .ds-accessibility .ds-accessibility-icon--revert {
+      background: url("images/revert.svg") no-repeat;
+      width: 150px;
+      height: 105px; }
   .ds-accessibility.ds-accessibility-size-s.ds-accessibility-collapsed .ds-accessibility-container {
     width: 40px;
     height: 40px; }

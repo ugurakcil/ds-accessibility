@@ -38,16 +38,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "UNITS": () => (/* binding */ UNITS)
 /* harmony export */ });
 const LOCALE =  {
-    "he": {
-        "zoom-out": "הקטן",
-        "zoom-in": "הגדל",
-        "invert": "היפוך צבעים",
-        "bigger-mouse": "עכבר גדול",
-        "brightness": "בהירות",
-        "contrast": "ניגודיות",
-        "grayscale": "גווני אפור",
-        "reset": "ביטול שינויים"
-    },
     "en": {
         "zoom-out": "Zoom Out",
         "zoom-in": "Zoom In",
@@ -75,51 +65,51 @@ const TEMPLATE = `<div class="ds-accessibility-cursor-workaround"></div>
     <div class="ds-accessibility-container">
 
         <div class="ds-accessibility-expand-button">
-            <img src="images/expand.svg" />
+            <div class="ds-accessibility-icon ds-accessibility-icon--expand"></div>
         </div>
 
         <div class="ds-accessibility-menu">
             <div class="ds-accessibility-close-button">
-                <img src="images/close.svg" />  
+                <div class="ds-accessibility-icon ds-accessibility-icon--close"></div>
             </div>
 
             <div class="ds-accessibility-menu-button ds-accessibility-zoom-out-button">
-                <img src="images/zoom-out.svg" />
+                <div class="ds-accessibility-icon ds-accessibility-icon--zoom-out"></div>
                 <span data-lang="zoom-out">Zoom Out</span>
             </div>
 
             <div class="ds-accessibility-menu-button ds-accessibility-zoom-in-button">
-                <img src="images/zoom-in.svg" />
+                <div class="ds-accessibility-icon ds-accessibility-icon--zoom-in"></div>
                 <span data-lang="zoom-in">Zoom In</span>
             </div>
 
             <div class="ds-accessibility-menu-button ds-accessibility-invert-button">
-                <img src="images/invert.svg" />
+                <div class="ds-accessibility-icon ds-accessibility-icon--invert"></div>
                 <span data-lang="invert">Invert</span>
             </div>
 
             <div class="ds-accessibility-menu-button ds-accessibility-cursor-button">
-                <img src="images/cursor.svg" />
+                <div class="ds-accessibility-icon ds-accessibility-icon--cursor"></div>
                 <span data-lang="bigger-cursor">Bigger Cursor</span>
             </div>
 
             <div class="ds-accessibility-menu-button ds-accessibility-brightness-button">
-                <img src="images/brightness.svg" />
+                <div class="ds-accessibility-icon ds-accessibility-icon--brightness"></div>
                 <span data-lang="brightness">Brightness</span>
             </div>
 
             <div class="ds-accessibility-menu-button ds-accessibility-contrast-button">
-                <img src="images/contrast.svg" />
+                <div class="ds-accessibility-icon ds-accessibility-icon--contrast"></div>
                 <span data-lang="contrast">Contrast</span>
             </div>
 
             <div class="ds-accessibility-menu-button ds-accessibility-monochrome-button">
-                <img src="images/monochrome.svg" />
+                <div class="ds-accessibility-icon ds-accessibility-icon--monochrome"></div>
                 <span data-lang="grayscale">Monochrome</span>
             </div>
 
             <div class="ds-accessibility-menu-button ds-accessibility-reset-button">
-                <img src="images/revert.svg" />
+                <div class="ds-accessibility-icon ds-accessibility-icon--revert"></div>
                 <span data-lang="reset">Revert</span>
             </div>
         </div>
@@ -380,6 +370,9 @@ class dsAccessibility {
     
     generator(customOptions) {
         let element = document.getElementsByTagName('body')[0];
+
+        if(customOptions.wrapper)
+            element = customOptions.wrapper;
     
         customOptions = customOptions || {};
     
@@ -570,7 +563,7 @@ class dsAccessibility {
             filters.push('brightness(' + options.brightness + '%)');
             filters.push('grayscale(' + options.grayscale + '%)');
             let filterValue = filters.join(' ');
-            body.style['filter'] = filterValue;
+            html.style['filter'] = filterValue;
     
             _helpers_js__WEBPACK_IMPORTED_MODULE_2__.applyTextZoom(options.textSelector, options.zoom);
     
