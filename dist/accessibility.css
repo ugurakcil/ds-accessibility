@@ -192,43 +192,86 @@
     background-color: #fff;
     transform: scale(1, 1) translate3d(0, 0, 0); }
 
+/*
 @media screen and (max-width: 780px) {
-  .ds-accessibility {
-    right: 0px;
-    top: 0px; }
-    .ds-accessibility .ds-accessibility-menu {
-      height: 10%;
-      width: 100%; }
-    .ds-accessibility.ds-accessibility-expanded .ds-accessibility-container {
-      height: 10%;
-      width: 100%; }
-    .ds-accessibility-menu-button {
-      width: 25%;
-      height: 10%; }
-    .ds-accessibility-menu-footer {
-      display: none !important; }
-    .ds-accessibility-close-button {
-      height: 0px; }
-    .ds-accessibility-expand-button {
+
+  $horizontal-width: 25%;
+  $horizontal-height: 10%;
+  $vertical-width: 25%;
+  $vertical-height: 25%;
+  $close-button-height: 0px;
+  $toggle-button-width:50px;
+  $toggle-button-hight:55px;
+  $toggle-button-icon:60px;
+  $offset: 0px;
+  $z-index: 10;
+  $menu-width: 100%;
+  $menu-height: 10%;
+  .ds-accessibility
+  {
+    right: $offset;
+    top: $offset;
+    .ds-accessibility-menu
+    {
+      height: $horizontal-height;
+      width: $menu-width;
+    }
+    $close-button-height: 0px;
+    &.ds-accessibility-expanded {
+
+      .ds-accessibility-container {
+        height: $horizontal-height;
+        width: $menu-width;
+      }
+    }
+
+    &-menu {
+      $menu-button-width: 110px;
+      &-button {
+
+        width: $horizontal-width;
+        height: $horizontal-height;
+
+      }
+      &-footer {
+        display: none !important;
+      }
+    }
+    &-close-button {
+      height: $close-button-height;
+
+    }
+    &-expand-button {
       cursor: pointer;
       position: absolute;
-      line-height: 50px;
-      width: 50px;
-      height: 60px;
-      text-align: center; }
-      .ds-accessibility-expand-button svg {
+      line-height: $toggle-button-size;
+      width: $toggle-button-width;
+      height: $toggle-button-icon;
+      text-align: center;
+
+      svg {
         fill: #fff;
         width: 35px;
-        height: 60px;
-        line-height: 50px; }
-    .ds-accessibility.ds-accessibility-expanded {
-      position: static; }
-    .ds-accessibility.ds-accessibility-collapsed .ds-accessibility-container {
-      width: 50px;
-      height: 55px;
-      border-radius: 50% 0% 0% 50%;
-      color: white;
-      background-color: #7185f6; } }
+        height: $toggle-button-icon;
+        line-height: $toggle-button-size;
+
+      }
+    }
+    &.ds-accessibility-expanded {
+      position: static;
+    }
+    &.ds-accessibility-collapsed {
+      .ds-accessibility-container {
+        width: $toggle-button-width;
+        height: $toggle-button-hight;
+        border-radius: 50% 0% 0% 50%;
+        color: white;
+        background-color: $background-color;
+      }
+    }
+  }
+}
+*/
 
 
 /*# sourceMappingURL=accessibility.css.map*/

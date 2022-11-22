@@ -32,12 +32,12 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "LOCALE": () => (/* binding */ LOCALE),
-/* harmony export */   "LOCAL_STORAGE_OPTIONS_KEY": () => (/* binding */ LOCAL_STORAGE_OPTIONS_KEY),
-/* harmony export */   "TEMPLATE": () => (/* binding */ TEMPLATE),
-/* harmony export */   "UNITS": () => (/* binding */ UNITS)
+/* harmony export */   "DS_LOCALE": () => (/* binding */ DS_LOCALE),
+/* harmony export */   "DS_LOCAL_STORAGE_OPTIONS_KEY": () => (/* binding */ DS_LOCAL_STORAGE_OPTIONS_KEY),
+/* harmony export */   "DS_TEMPLATE": () => (/* binding */ DS_TEMPLATE),
+/* harmony export */   "DS_UNITS": () => (/* binding */ DS_UNITS)
 /* harmony export */ });
-const LOCALE =  {
+const DS_LOCALE =  {
     "en": {
         "zoom-out": "Zoom Out",
         "zoom-in": "Zoom In",
@@ -60,7 +60,7 @@ const LOCALE =  {
     },
 };
 
-const TEMPLATE = `<div class="ds-accessibility-cursor-workaround"></div>
+const DS_TEMPLATE = `<div class="ds-accessibility-cursor-workaround"></div>
 <div class="ds-accessibility ds-accessibility-collapsed">
     <div class="ds-accessibility-container">
 
@@ -116,9 +116,9 @@ const TEMPLATE = `<div class="ds-accessibility-cursor-workaround"></div>
     </div>
 </div>`;
 
-const LOCAL_STORAGE_OPTIONS_KEY = 'ds-accessibility-config';
+const DS_LOCAL_STORAGE_OPTIONS_KEY = 'ds-accessibility-config';
 
-const UNITS = ['px', 'cm', 'em', 'ex', 'in', 'mm', 'pc', 'pt', 'vh', 'vw', 'vmin'];
+const DS_UNITS = ['px', 'cm', 'em', 'ex', 'in', 'mm', 'pc', 'pt', 'vh', 'vw', 'vmin'];
 
 
 /***/ }),
@@ -146,7 +146,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "translateTheme": () => (/* binding */ translateTheme)
 /* harmony export */ });
 /* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants.js */ "./src/constants.js");
-
 
 
 function getFontSize(el){
@@ -181,7 +180,7 @@ function fadeIn(el, display){
 
 function getUnit(fontSize) {
     fontSize = fontSize || '';
-    return _constants_js__WEBPACK_IMPORTED_MODULE_0__.UNITS.filter(unit => fontSize.match(new RegExp(unit + '$', 'gi')))
+    return _constants_js__WEBPACK_IMPORTED_MODULE_0__.DS_UNITS.filter(unit => fontSize.match(new RegExp(unit + '$', 'gi')))
         .pop()
 }
 
@@ -206,7 +205,7 @@ function getUserOptions() {
     let data;
 
     try {
-        data = localStorage.getItem(_constants_js__WEBPACK_IMPORTED_MODULE_0__.LOCAL_STORAGE_OPTIONS_KEY);
+        data = localStorage.getItem(_constants_js__WEBPACK_IMPORTED_MODULE_0__.DS_LOCAL_STORAGE_OPTIONS_KEY);
         data = JSON.parse(data);
     } catch (e) {
     }
@@ -219,7 +218,7 @@ function getUserOptions() {
 }
 
 function setUserOptions(options) {
-    localStorage.setItem(_constants_js__WEBPACK_IMPORTED_MODULE_0__.LOCAL_STORAGE_OPTIONS_KEY, JSON.stringify(options));
+    localStorage.setItem(_constants_js__WEBPACK_IMPORTED_MODULE_0__.DS_LOCAL_STORAGE_OPTIONS_KEY, JSON.stringify(options));
 }
 
 function applyTextZoom(selector, zoom) {
@@ -259,7 +258,7 @@ function getLanguages(langs, map) {
     let res = {};
 
     langs.forEach((key) => {
-        let value = (map && map[key]) || (_constants_js__WEBPACK_IMPORTED_MODULE_0__.LOCALE[key]);
+        let value = (map && map[key]) || (_constants_js__WEBPACK_IMPORTED_MODULE_0__.DS_LOCALE[key]);
         if (isPlainObject(value)) {
             res[key] = value;
         }
@@ -403,7 +402,7 @@ class dsAccessibility {
             return;
         }
     
-        element.innerHTML += _constants_js__WEBPACK_IMPORTED_MODULE_1__.TEMPLATE;
+        element.innerHTML += _constants_js__WEBPACK_IMPORTED_MODULE_1__.DS_TEMPLATE;
     
         let html = document.getElementsByTagName('html')[0];
         let body = document.getElementsByTagName('body')[0];
